@@ -28,6 +28,7 @@
             background-repeat: no-repeat; */
             position: relative;
             overflow: hidden;
+            background-repeat:repeat; 
         }
 
         #clouds{
@@ -35,6 +36,7 @@
             height: 100%;
             width: 100%;
             position: absolute;
+            background-repeat:repeat;
 
         }
 
@@ -190,25 +192,55 @@
 
         <script>
 
-            
+function animated(t,m){
+
+let pos=m;
+let timer=setInterval(move,20);
+
+function move(){
+    if(pos>window.innerHeight){
+        pos=0;
+
+    }
+    else{
+        pos++;
+        t.style.top=pos + "px";
+        
+    }
+}
+
+}           
                 
-                var t=document.getElementById("clouds");
-                let pos=0;
-                let timer=setInterval(move,20);
+                var u=document.getElementById("cloud1");
+                animated(u,70);
+                var v=document.getElementById("cloud2");
+                animated(v,80);
+                var a=document.getElementById("cloud3");
+                animated(a,400);
+                var b=document.getElementById("cloud4");
+                animated(b,150);
+                var c=document.getElementById("cloud5");
+                animated(c,290);
+                var d=document.getElementById("cloud6");
+                animated(d,500);
+                var e=document.getElementById("cloud7");
+                animated(e,200);
+                var f=document.getElementById("cloud8");
+                animated(f,0);
+                var g=document.getElementById("cloud9");
+                animated(g,20);
+                var h=document.getElementById("cloud10");
+                animated(h,520);
 
-                function move(){
-                    if(pos>window.innerHeight){
-                        pos=0;
 
-                    }
-                    else{
-                        pos++;
-                        t.style.top=pos + "px";
-                        
-                    }
+               
 
                     
-                }
+                
+
+               
+
+                
 
                 
 
