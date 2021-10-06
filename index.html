@@ -6,24 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>animation</title>
     <style>
+        
+        *{
+            
+            margin: 0;
+            padding: 0;
+        }
         body{
+            height: 100vh;
 
-            background-color: black;
-
+            
         }
 
-        #container{
+        .container{
 
+            height: 100%;
+            width: 100%;
+            background: black;
+            /* background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat; */
             position: relative;
+            overflow: hidden;
+        }
+
+        #clouds{
+
+            height: 100%;
+            width: 100%;
+            position: absolute;
+
         }
 
         #rocket{
 
             width: 250px;
             height: 250px;
-            
-
-            
         }
         #animate{
 
@@ -32,11 +50,7 @@
             top: 325px;
         }
 
-        .cloud{
-
-            position: relative;
-
-        }
+    
 
         #cloud1{                      
             position: absolute;
@@ -106,16 +120,20 @@
         left: 350px;
         
         }
+        .clouds{
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body>
-    <div id="container">
+    <div class="container">
         <div id="animate">
 
             <img id="rocket" src="images/rocket2.png" alt="">
 
         </div>
-        <div class="clouds">
+        <div id="clouds">
 
             <div id="cloud1">
 
@@ -168,6 +186,38 @@
 
         </div>
 
-        </div>
+    </div>
+
+        <script>
+
+            
+                
+                var t=document.getElementById("clouds");
+                let pos=0;
+                let timer=setInterval(move,20);
+
+                function move(){
+                    if(pos>window.innerHeight){
+                        pos=0;
+
+                    }
+                    else{
+                        pos++;
+                        t.style.top=pos + "px";
+                        
+                    }
+
+                    
+                }
+
+                
+
+
+
+
+                
+            
+
+        </script>
 </body>
 </html>
