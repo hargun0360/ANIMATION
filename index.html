@@ -233,23 +233,34 @@ function move(){
                 animated(h,520);
 
 
-               
 
-                    
-                
+                function rocket(k){
 
-               
+                    let p=480;
+                    let timers=setInterval(roc,30);
+                    var t=1;
+                    function roc(){
+                        if(p>580 || t==0){
+                            k.style.left=p + "px";
+                            p--;
+                            if(p==480){
+                                t=1;
+                            }
+                        }
+                        else{
+                            k.style.left= p + "px";
+                            p++; 
+                            if(p==580){
+                                t=0;
+                            }
+                        }
 
-                
+                    }
+                }
 
-                
+                    var z=document.getElementById("animate");
+                    rocket(z);
 
-
-
-
-                
-            
-
-        </script>
+</script>
 </body>
 </html>
